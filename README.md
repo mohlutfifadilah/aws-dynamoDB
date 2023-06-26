@@ -23,6 +23,8 @@
 
 ## 🚀 Buat Tabel di DynamoDB
 
+![dynamo](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/path-to-your-image.png)
+
 In this tutorial, we'll embark on a thrilling journey of Big Data and Cloud Computing using AWS services. DynamoDB will be our trusted NoSQL database, while S3 will provide storage power. We'll leverage the incredible capabilities of AWS Lambda functions to process and analyze data. Let's unleash the true potential of the cloud! ☁️
 
 ## ✨ Prerequisites
