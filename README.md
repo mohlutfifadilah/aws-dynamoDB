@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=aws&theme=light" />
+    <img src="https://skillicons.dev/icons?i=aws&theme=light" width="500" />
   </a>
 </h1>
 
@@ -209,7 +209,3 @@ def lambda_handler(event, context):
 Selamat ! Anda telah membuka rahasia DynamoDB, S3, dan Lambda, memberdayakan diri Anda dengan keterampilan yang diperlukan untuk mengatasi tantangan Big Data di Cloud. Perjalanan Anda baru saja dimulai! 🚀
 
 Jangan ragu untuk menjelajahi topik yang lebih lanjut, bereksperimen dengan set data yang berbeda, atau sesuaikan tutorial ini dengan kebutuhan Anda. Jika Anda memiliki pertanyaan atau memerlukan bantuan, jangan ragu untuk menghubungi kami. Selamat berpetualang di awan! ⚡️✨
-
-<p align="center">
-  <img src="https://your-image-url" alt="Big Data and Cloud Computing Practicum" width="500">
-</p>
