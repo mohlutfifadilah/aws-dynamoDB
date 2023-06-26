@@ -129,7 +129,7 @@ def lambda_handler(event, context):
   Lalu masuk ke menu <b>Configuration > General Configuration > Edit</b>, lalu ubah timeout menjadi 2 menit
 </p>
 
-![add-timeout](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/add-timeout.png)
+![add-timeot](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/add-timeot.png)
 
 <p>
   Lalu test dengan klik <b>Test</b>
