@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=aws&theme=light" width="500" />
+    <img src="https://skillicons.dev/icons?i=aws&theme=light" width="300" />
   </a>
 </h1>
 
