@@ -26,7 +26,9 @@
 <p>
   Login terlebih dahulu ke dalam akun AWS masing-masing, lalu masuk ke service <b>Database > DynamoDB</b>
 </p>
-![dynamo](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/a81c2abc2261105d6bfd602f9ad9e5dcb6190739/gambar/dynamo.png)
+![dynamo](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/dynamo.png)
+![dynamo](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/dynamo.png?raw=true)
+
 <p>
   Lalu buat table dengan klik <b>Create Table</b>, lalu isikan kolom apa saja yang dibutuhkan beserta tipe datanya lalu klik Create Table
 </p>
