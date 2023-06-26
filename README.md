@@ -26,6 +26,7 @@
 <p>
   Login terlebih dahulu ke dalam akun AWS masing-masing, lalu masuk ke service <b>Database > DynamoDB</b>
 </p>
+
 ![dynamo](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/dynamo.png)
 
 ![dynamo](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/dynamo.png?raw=true)
