@@ -29,30 +29,31 @@
 
 ![dynamo](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/dynamo.png)
 
-![dynamo](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/dynamo.png?raw=true)
-
 <p>
   Lalu buat table dengan klik <b>Create Table</b>, lalu isikan kolom apa saja yang dibutuhkan beserta tipe datanya lalu klik Create Table
 </p>
+
 ![create-table](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/create-table.png)
 ![table-detail](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/table-detail.png)
+
 <p>
   Jika sudah, cek apakah tabel sudah aktif atau belum, bila sudah akan terdapat tampilan seperti dibawah ini
 </p>
+
 ![active-table](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/active-table.png)
-
-
-In this tutorial, we'll embark on a thrilling journey of Big Data and Cloud Computing using AWS services. DynamoDB will be our trusted NoSQL database, while S3 will provide storage power. We'll leverage the incredible capabilities of AWS Lambda functions to process and analyze data. Let's unleash the true potential of the cloud! ☁️
 
 ## ✨ Import CSV
 
 <p>
   Masuk ke menu <b>Bucket</b>, lalu <b>Create Bucket</b>
 </p>
+
 ![create-bucket](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/create-bucket.png)
+
 <p>
   Jika sudah, akan muncul pesan berhasil
 </p>
+
 ![upload-csv-to-bucket](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/upload-csv-to-bucket.png)
 
 ## 🎉 Buat Role
@@ -60,10 +61,13 @@ In this tutorial, we'll embark on a thrilling journey of Big Data and Cloud Comp
 <p>
   Setelah file csv berhasil di upload, buat Role terlebih dahulu masuk ke menu <b>Identity and Access Management (IAM) > Roles > Create Role</b>
 </p>
+
 ![create-role](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/create-role.png)
+
 <p>
   Lalu buat function lambda 
 </p>
+
 ![create-lambda-function](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/create-lambda-function.png)
 
 ## 📥 Tambahkan Permission Policies
@@ -73,18 +77,25 @@ In this tutorial, we'll embark on a thrilling journey of Big Data and Cloud Comp
   a.  AmazonDynamoDBFullAccess
   b.  AmazonS3FullAccess
 </p>
+
 ![add-permission-policy](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/add-permission-policy.png)
+
 <p>
   Setelah itu, buat function lambda beserta code programnya
 </p>
+
 ![lambda-function](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/lambda-function.png)
+
 <p>
   Lalu tambahkan Role yang sudah tadi dibuat
 </p>
+
 ![existing-role](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/existing-role.png)
+
 <p>
   Tambahkan code berikut ini pada function yang sudah tadi dibuat atau yang akan kita run untuk import file csv
 </p>
+
 '''python
 import boto3
 s3_client = boto3.client("s3")
@@ -113,18 +124,25 @@ def lambda_handler(event, context):
         except Exception as e:
             print("e")
 '''
+
 <p>
   Lalu masuk ke menu <b>Configuration > General Configuration > Edit</b>, lalu ubah timeout menjadi 2 menit
 </p>
+
 ![add-timeout](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/add-timeout.png)
+
 <p>
   Lalu test dengan klik <b>Test</b>
 </p>
+
 ![test-event](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/test-event.png)
+
 <p>
   Masukkan kode JSON pada event nya
 </p>
+
 ![add-json](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/add-json.png)
+
 '''json
 {
   "Records": [
@@ -169,6 +187,7 @@ def lambda_handler(event, context):
 <p>
   Cek items dari apakah sudah terimport atau belum, jika sudah item akan muncul
 </p>
+
 ![check](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/check.png)
 
 ## 🔍 Tambahkan Filter
@@ -176,6 +195,7 @@ def lambda_handler(event, context):
 <p>
   Tambahkan filter pada tabel
 </p>
+
 ![add-filter](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/add-filter.png)
 
 ## 📤 Export Data
@@ -183,6 +203,7 @@ def lambda_handler(event, context):
 <p>
   Untuk export data, klik pada menu <b>Action > Download result to CSV</b> 
 </p>
+
 ![export-result](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/export-result.png)
 
 Selamat ! Anda telah membuka rahasia DynamoDB, S3, dan Lambda, memberdayakan diri Anda dengan keterampilan yang diperlukan untuk mengatasi tantangan Big Data di Cloud. Perjalanan Anda baru saja dimulai! 🚀
