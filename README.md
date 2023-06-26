@@ -96,7 +96,7 @@
   Tambahkan code berikut ini pada function yang sudah tadi dibuat atau yang akan kita run untuk import file csv
 </p>
 
-'''python
+```python
 import boto3
 s3_client = boto3.client("s3")
 dynamodb = boto3.resource("dynamodb")
@@ -123,7 +123,7 @@ def lambda_handler(event, context):
             )
         except Exception as e:
             print("e")
-'''
+```
 
 <p>
   Lalu masuk ke menu <b>Configuration > General Configuration > Edit</b>, lalu ubah timeout menjadi 2 menit
@@ -143,7 +143,7 @@ def lambda_handler(event, context):
 
 ![add-json](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/add-json.png)
 
-'''json
+```json
 {
   "Records": [
     {
@@ -182,7 +182,7 @@ def lambda_handler(event, context):
     }
   ]
 }
-'''
+```
 
 <p>
   Cek items dari apakah sudah terimport atau belum, jika sudah item akan muncul
