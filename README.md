@@ -13,9 +13,9 @@
 ## 📚 Daftar Isi :
 
 - [🚀 Buat Tabel di DynamoDB](#-Buat-Tabel-di-DynamoDB)
-- [✨ Prerequisites](#-prerequisites)
-- [🎉 Getting Started](#-getting-started)
-- [📥 Importing Data](#-importing-data)
+- [✨ Import CSV](#-Import-CSV)
+- [🎉 Buat Role](#-Buat-Role)
+- [📥 Tambahkan Permission Policies](#-Tambahkan-Permission-Policies)
 - [💡 Working with DynamoDB](#-working-with-dynamodb)
 - [🔍 Creating Filters](#-creating-filters)
 - [📤 Exporting Data](#-exporting-data)
@@ -23,32 +23,67 @@
 
 ## 🚀 Buat Tabel di DynamoDB
 
-![dynamo](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/path-to-your-image.png)
+<p>
+  Login terlebih dahulu ke dalam akun AWS masing-masing, lalu masuk ke service <b>Database > DynamoDB</b>
+</p>
+![dynamo](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/dynamo.png)
+<p>
+  Lalu buat table dengan klik <b>Create Table</b>, lalu isikan kolom apa saja yang dibutuhkan beserta tipe datanya lalu klik Create Table
+</p>
+![create-table](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/create-table.png)
+![table-detail](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/table-detail.png)
+<p>
+  Jika sudah, cek apakah tabel sudah aktif atau belum, bila sudah akan terdapat tampilan seperti dibawah ini
+</p>
+![active-table](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/active-table.png)
+
 
 In this tutorial, we'll embark on a thrilling journey of Big Data and Cloud Computing using AWS services. DynamoDB will be our trusted NoSQL database, while S3 will provide storage power. We'll leverage the incredible capabilities of AWS Lambda functions to process and analyze data. Let's unleash the true potential of the cloud! ☁️
 
-## ✨ Prerequisites
+## ✨ Import CSV
 
-To embark on this adventure, make sure you have the following:
+<p>
+  Masuk ke menu <b>Bucket</b>, lalu <b>Create Bucket</b>
+</p>
+![create-bucket](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/create-bucket.png)
+<p>
+  Jika sudah, akan muncul pesan berhasil
+</p>
+![upload-csv-to-bucket](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/upload-csv-to-bucket.png)
 
-- An AWS account with the necessary permissions. 🌐
-- Basic knowledge of AWS services, including DynamoDB, S3, and Lambda. 🧠
-- Familiarity with Python programming. 🐍
+## 🎉 Buat Role
 
-## 🎉 Getting Started
+<p>
+  Setelah file csv berhasil di upload, buat Role terlebih dahulu masuk ke menu <b>Identity and Access Management (IAM) > Roles > Create Role</b>
+</p>
+![create-role](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/create-role.png)
+<p>
+  Lalu buat function lambda 
+</p>
+![create-lambda-function](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/create-lambda-function.png)
 
-To begin our quest, let's follow these steps:
+## 📥 Tambahkan Permission Policies
 
-1. Login to the AWS Console using your own account credentials. 🔑
-2. Navigate to the Database section and choose DynamoDB. 🗄️
-3. Create a new table with the desired schema. ⚙️
-4. Wait for the table to become active. ⏳
-5. Enter the "profile" table and create a new item with your own data. ✏️
+<p>
+  Buka tab Permission Policies pada function lambda yang dibuat tadi
+  a.  AmazonDynamoDBFullAccess
+  b.  AmazonS3FullAccess
+</p>
+![add-permission-policy](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/add-permission-policy.png)
+<p>
+  Setelah itu, buat function lambda beserta code programnya
+</p>
+![lambda-function](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/lambda-function.png)
+<p>
+  Lalu tambahkan Role yang sudah tadi dibuat
+</p>
+![existing-role](https://github.com/mohlutfifadilah/aws-dynamoDB/blob/master/gambar/existing-role.png)
+<p>
+  Tambahkan code berikut ini pada function yang sudah tadi dibuat atau yang akan kita run untuk import file csv
+</p>
+'''python
 
-For detailed instructions and helpful screenshots, refer to the [🎉 Getting Started](#-getting-started) section of this tutorial.
-
-## 📥 Importing Data
-
+'''
 In this section, we'll import data into DynamoDB using a CSV file. Let's dive in:
 
 1. Create an S3 bucket to store the CSV file. 📦
